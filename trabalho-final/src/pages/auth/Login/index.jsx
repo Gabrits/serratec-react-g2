@@ -7,7 +7,7 @@ import "./style.css";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [revealPassword, setRevealPassword] = useState("false");
+  const [revealPassword, setRevealPassword] = useState(false);
 
   const handleRevealPassword = (e) => {
     e.preventDefault();

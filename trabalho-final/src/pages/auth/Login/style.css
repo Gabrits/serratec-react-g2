@@ -41,6 +41,10 @@
 
 .login-form .custom-form-text-group .custom-form-input {
   height: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgb(160, 160, 160);
+  padding: 2px 12px;
+  font-size: 14px;
 }
 
 /* Estilização dos botões */
