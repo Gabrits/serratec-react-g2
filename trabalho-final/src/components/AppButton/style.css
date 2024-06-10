@@ -1,0 +1,34 @@
+/* 
+    Criei um botão personalizado que 
+    pode ser usado por todos na app
+    
+    É só escolher entre:
+    1. app-primary-button 
+    ou 
+    2. app-secondary-button
+*/
+
+.app-primary-button,
+.app-secondary-button {
+  border: none;
+  border-radius: 25px;
+  height: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.app-primary-button {
+  color: white;
+  background-color: rgb(98, 161, 255);
+}
+
+.app-secondary-button {
+  background-color: #fff;
+}
+
+.app-primary-button:hover,
+.app-secondary-button:hover {
+  cursor: pointer;
+  filter: brightness(0.96);
+}
