@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { getCookie } from "../../services/cookie";
 import AppButton from "../../components/AppButton";
+import './style.css'
 
 function Feed() {
   const [publicacoes, setPublicacoes] = useState([]);
@@ -40,8 +41,19 @@ function Feed() {
           ))}
         </ul>
       ) : (
-        "Não há dados para serem exibidos no Feed!"
+        // "Não há dados para serem exibidos no Feed!"
+        ""
       )}
+
+      <div className="navbar">
+          <div className="logo">
+            <img src='src/assets/logo.png' width={175} height={175}/>
+          </div>
+      </div>
+          <div className="linhaSeparacao">
+            <img src="https://www.freepnglogos.com/uploads/line-png/long-lines-straight-line-transparent-7.png" height={50} width={700}/>
+          </div>
+          
     </>
   );
 }
