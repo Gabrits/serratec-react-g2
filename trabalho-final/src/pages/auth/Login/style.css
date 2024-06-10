@@ -1,0 +1,60 @@
+.login-page {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-page .login-form {
+  height: auto;
+  width: 21rem;
+  padding: 2rem 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.login-form .custom-form-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-form
+  .custom-form-text-group
+  .custom-form-label
+  .custom-form-password-reveal-text {
+  color: rgb(98, 161, 255);
+}
+
+.login-form
+  .custom-form-text-group
+  .custom-form-label
+  .custom-form-password-reveal-text:hover {
+  background-color: rgb(174, 206, 254);
+  cursor: pointer;
+}
+
+.login-form .custom-form-text-group .custom-form-input {
+  height: 1.5rem;
+}
+
+/* Estilização dos botões */
+
+.login-form .custom-form-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 425px) {
+  .login-page .login-form {
+    width: 16rem;
+    gap: 31px;
+  }
+}

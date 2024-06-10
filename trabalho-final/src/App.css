@@ -1,0 +1,11 @@
+/* Estilização global da App */
+
+/* 
+    Coloquei o "*" só para resetar o espaçamento da margem e 
+    padding igualmente em todas as páginas da aplicação.
+*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+}

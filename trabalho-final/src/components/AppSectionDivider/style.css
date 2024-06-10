@@ -1,0 +1,16 @@
+.custom-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  list-style-type: none;
+}
+
+.custom-divider .custom-divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: gray;
+}
+
+.custom-divider .custom-divider-text {
+  margin: 0 10px;
+}
