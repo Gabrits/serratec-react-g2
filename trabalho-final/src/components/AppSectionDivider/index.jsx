@@ -10,7 +10,7 @@ import "./style.css";
 */
 function AppSectionDivider({ text = "Título" }) {
   return (
-    <ul className="custom-divider">
+    <ul  className="custom-divider">
       <li className="custom-divider-line" />
       <li>
         <span className="custom-divider-text">{text}</span>

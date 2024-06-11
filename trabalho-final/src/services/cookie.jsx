@@ -1,7 +1,7 @@
 /* Operações com Cookie */
 
 /* Define um valor para um cookie */
-export function setCookie(name, value, hours = 0.5) {
+export function setCookie(name, value, hours = 0.5) { // Por padrão, expira em 30 minutos
   const date = new Date();
   date.setTime(date.getTime() + hours * 3600 * 1000);
   const expires = "expires=" + date.toUTCString();

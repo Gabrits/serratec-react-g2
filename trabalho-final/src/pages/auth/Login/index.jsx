@@ -81,7 +81,7 @@ function Login() {
 
           {/* Cadastrar-se */}
           <AppButton
-            onClick={(e) => redirectToPath("cadastrar", e)}
+            onClick={(e) => redirectToPath("/auth/cadastrar", e)}
             type="secondary"
           >
             Cadastre-se
