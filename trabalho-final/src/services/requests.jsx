@@ -34,15 +34,10 @@ export function sendGetByIdRequest(
   return sendDefaultJson("Você deve fornecer um id e um endpoint.", {});
 }
 
-export function sendPostRequest(
-  endpoint,
-  body,
-  headers = { Authorization: getCookie("jwtToken") },
-  url = "http://localhost:9090"
-) {
+export function sendPostRequest(endpoint, body, url = "http://localhost:9090") {
   if (endpoint) {
     return axios
-      .post(`${url}/${endpoint}`, body, { headers: headers })
+      .post(`${url}/${endpoint}`, body)
       .then((response) => sendDefaultJson("Sucesso na requisição!", response))
       .catch((error) => sendDefaultJson("Falha na requisição", error));
   }
