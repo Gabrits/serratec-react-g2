@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { redirectToPath, toggleState } from "../../../services/app";
 import AppButton from "../../../components/AppButton";
+import AppRevealButton from "../../../components/AppRevealButton";
 import AppSectionDivider from "../../../components/AppSectionDivider";
 import "./style.css";
 import axios from "axios";
@@ -51,15 +52,14 @@ function Login() {
             onChange={(e) => setUser({ ...user, username: e.target.value })}
           />
 
-          <label className="custom-form-label" htmlFor="password">
-            Senha:{" "}
-            <AppButton
-              className="custom-form-password-reveal-text"
+          <label className="custom-form-label custom-password-label" htmlFor="password">
+            Senha:
+            <AppRevealButton
               onClick={(e) => handleRevealPassword(e)}
-              size="compact"
+              reveal={revealPassword}
             >
               {revealPassword ? "Esconder" : "Revelar"}
-            </AppButton>
+            </AppRevealButton>
           </label>
           <input
             className="custom-form-input"

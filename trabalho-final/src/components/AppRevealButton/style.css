@@ -1,0 +1,19 @@
+.app-reveal-button {
+  margin: 0 3px;
+  border: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background-color: rgb(244, 244, 244);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.closed {
+  background-color: transparent;
+}
+
+.app-reveal-button:hover,
+.closed:hover {
+  background-color: rgb(244, 244, 244);
+  filter: brightness(0.95);
+}

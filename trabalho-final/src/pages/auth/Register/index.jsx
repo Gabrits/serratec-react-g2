@@ -1,15 +1,27 @@
 import { useState } from "react";
 import AppButton from "../../../components/AppButton";
-import { redirectToPath } from "../../../services/app";
+import { toggleState, redirectToPath } from "../../../services/app";
 import "./style.css";
+import AppRevealButton from "../../../components/AppRevealButton";
 
 function Register() {
   const [userFormData, setUserFormData] = useState({});
+  const [revealPassword, setRevealPassword] = useState(false);
+  const [revealPasswordConfirmation, setRevealPasswordConfirmation] =
+    useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(userFormData);
+  };
+
+  const handleRevealPassword = (state, setState, e) => {
+    toggleState(state, setState, e);
+  };
 
   return (
     <div className="register-page">
       {/* Formulário de Login */}
-      
       <form className="register-form">
         <div className="custom-form-text-group">
           <div className="custom-form-name-text-group">
@@ -20,8 +32,10 @@ function Register() {
               className="custom-form-input"
               type="text"
               id="username"
-              placeholder="James"
-              onChange={(e) => setUser({ ...user, username: e.target.value })}
+              placeholder="Erik"
+              onChange={(e) =>
+                setUserFormData({ ...userFormData, nome: e.target.value })
+              }
             />
 
             <label className="custom-form-label" htmlFor="sobrenome">
@@ -31,53 +45,85 @@ function Register() {
               className="custom-form-input"
               type="text"
               id="sobrenome"
-              placeholder="Marshall"
-              onChange={(e) => setUser({ ...user, username: e.target.value })}
+              placeholder="Romanelli"
+              onChange={(e) =>
+                setUserFormData({ ...userFormData, sobrenome: e.target.value })
+              }
             />
           </div>
 
-          <label className="custom-form-label" htmlFor="sobrenome">
+          <label className="custom-form-label" htmlFor="email">
             Email:
           </label>
           <input
             className="custom-form-input"
             type="text"
-            id="sobrenome"
+            id="email"
             placeholder="nome@email.com"
-            onChange={(e) => setUser({ ...user, username: e.target.value })}
+            onChange={(e) =>
+              setUserFormData({ ...userFormData, email: e.target.value })
+            }
           />
 
-          <label className="custom-form-label" htmlFor="password">
+          <label className="custom-form-label custom-password-label" htmlFor="password">
             Senha:
+            <AppRevealButton
+              onClick={(e) =>
+                handleRevealPassword(revealPassword, setRevealPassword, e)
+              }
+              reveal={revealPassword}
+            />
           </label>
           <input
             className="custom-form-input"
-            type="text"
+            type={revealPassword ? "text" : "password"}
             id="password"
             placeholder="exemplo"
-            onChange={(e) => setUser({ ...user, username: e.target.value })}
+            onChange={(e) =>
+              setUserFormData({ ...userFormData, senha: e.target.value })
+            }
           />
 
-          <label className="custom-form-label" htmlFor="confirmPassword">
-            Confirmação da senha:
+          <label className="custom-form-label custom-password-label" htmlFor="confirmPassword">
+            Confirmação:
+            <AppRevealButton
+              onClick={(e) =>
+                handleRevealPassword(
+                  revealPasswordConfirmation,
+                  setRevealPasswordConfirmation,
+                  e
+                )
+              }
+              reveal={revealPasswordConfirmation}
+            />
           </label>
           <input
             className="custom-form-input"
-            type="text"
+            type={revealPasswordConfirmation ? "text" : "password"}
             id="confirmPassword"
             placeholder="exemplo"
-            onChange={(e) => setUser({ ...user, username: e.target.value })}
+            onChange={(e) =>
+              setUserFormData({
+                ...userFormData,
+                confirmaSenha: e.target.value,
+              })
+            }
           />
 
           <label className="custom-form-label" htmlFor="birthDate">
-            Data de nascimento:
+            Nascimento:
           </label>
           <input
             className="custom-form-input"
             type="text"
             id="birthDate"
             placeholder="dd/mm/aaaa"
-            onChange={(e) => setUser({ ...user, username: e.target.value })}
+            onChange={(e) =>
+              setUserFormData({
+                ...userFormData,
+                dataNascimento: e.target.value,
+              })
+            }
           />
         </div>
 

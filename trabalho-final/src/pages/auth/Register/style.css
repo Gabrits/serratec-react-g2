@@ -29,6 +29,11 @@
   gap: 1rem;
 }
 
+.register-form .custom-form-text-group .custom-password-label {
+  display: flex;
+  justify-content: space-between;
+}
+
 .register-form
   .custom-form-text-group
   .custom-form-label

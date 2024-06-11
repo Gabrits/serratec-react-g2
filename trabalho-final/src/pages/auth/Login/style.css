@@ -24,6 +24,11 @@
   gap: 12px;
 }
 
+.login-form .custom-form-text-group .custom-password-label {
+  display: flex;
+  justify-content: space-between;
+}
+
 .login-form
   .custom-form-text-group
   .custom-form-label
