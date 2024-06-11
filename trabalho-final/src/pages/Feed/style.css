@@ -1,10 +1,15 @@
+.containerGeral{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+}
+
 .container {
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    gap: 40px;
 }
 
 .publicacao {
@@ -14,15 +19,23 @@
     height: 400px;
     margin-top: 20px;
     border-radius: 10px;
-    border: solid 1px rgb(110, 110, 110);
-    background-color: rgb(44, 43, 43);
+    border: solid 1px rgb(44, 44, 44);
+    background-color: rgb(242, 245, 248);
     padding: 10px;
+    list-style: none;
 }
-
-nomeFoto{
+.containerGeral {
+    max-width: 1200px; /* Defina uma largura máxima para o contêiner pai */
+    margin: 0 auto; /* Centralize o contêiner horizontalmente */
     display: flex;
-    flex-direction: row;
-}
+    flex-wrap: wrap;
+    justify-content: center; /* Centralize horizontalmente as publicações */
+  }
+  
+  .publicacao {
+    margin: 0 30px; /* Reduza a margem entre as publicações */
+  }
+
 
 .fotoPerfil {
     width: 45px;
@@ -41,7 +54,7 @@ nomeFoto{
 .nomePerfil {
     margin-right: 10px;
     font-weight: bold;
-    color: aliceblue;
+    color: rgb(24, 24, 24);
 }
 
 .imagem {
@@ -56,51 +69,66 @@ nomeFoto{
 }
 
 .maisDetalhes {
-    display: inline-block; /* Alterando para inline-block para ajustar ao conteúdo */
-    padding: 10px 10px; /* Adicionando um espaço interno para melhorar a aparência */
-    background-color: #dadada; /* Alterando a cor de fundo para torná-la mais visível */
-    border: 1px solid #000000; /* Adicionando uma borda sólida */
-    border-radius: 5px; /* Arredondando as bordas */
+    display: inline-block; 
+    padding: 10px 10px; 
+    background-color: #dadada; 
+    border: 1px solid #000000; 
+    border-radius: 5px; 
     margin-top: 15px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Adicionando uma transição suave de cor de fundo */
+    transition: background-color 0.3s; 
 }
 
 .maisDetalhes:hover {
-    background-color: #868686; /* Mudando a cor de fundo quando o mouse passa por cima */
+    background-color: #868686; 
 }
 
 .maisDetalhes button {
-    background-color: transparent; /* Removendo o fundo padrão do botão */
-    border: none; /* Removendo a borda padrão do botão */
-    color: #333; /* Definindo a cor do texto */
-    font-size: 16px; /* Ajustando o tamanho da fonte */
-    cursor: pointer;
-    outline: none; /* Removendo o contorno padrão do botão */
+    background-color: transparent; 
+    border: none;
+    color: #333; 
+    font-size: 16px; 
+    cursor: pointer; 
+    outline: none; 
     text-align: center;
 }
 .fotonome{
     display: flex;
     flex-direction: row;
 }
-.curtirComentarEditar{
+.emojis{
+    color: #000000;
     display: flex;
+    list-style: none;
     flex-direction: row;
     gap: 10px;
 }
 .curtir{
-    margin-top: 6px;
+    color: black;
     cursor: pointer;
 }
+.curtir.ativo svg {
+    color: red;
+  }
 .comentar{
     margin-top: 1px;
     cursor: pointer;
 }
 .editar{
-    margin-top: 1px;
     cursor: pointer;
 }
-.descricao{
-    color: #dadada;
-    font-size: 15px;
+.deletar{
+    color: red;
+    cursor: pointer;
+}
+.novaPostagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+
+.novaPostagem Button {
+    font-size: 20px;
+    padding: 25px 10px;
 }
