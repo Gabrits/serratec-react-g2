@@ -1,0 +1,24 @@
+.card-edition {
+  margin: auto;
+  margin-top: 20rem;
+}
+
+@media (max-width: 800px) {
+  .card-edition {
+    margin-top: 14rem;
+  }
+}
+
+.teste {
+  display: grid;
+  justify-content: center;
+}
+
+.btn-enviar {
+  display: block;
+  margin: auto;
+}
+
+.tit-pub {
+  text-align: center;
+}

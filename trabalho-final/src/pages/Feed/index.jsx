@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { getCookie } from "../../services/cookie";
-import AppButton from "../../components/AppButton";
 import "./style.css";
 import NavBar from "../../components/Navbar";
 
