@@ -29,11 +29,8 @@
     margin: 0 auto; /* Centralize o contêiner horizontalmente */
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centralize horizontalmente as publicações */
-  }
-  
-  .publicacao {
-    margin: 0 30px; /* Reduza a margem entre as publicações */
+    gap: 20px;
+    justify-content: space-evenly; /* Centralize horizontalmente as publicações */
   }
 
 

@@ -6,7 +6,7 @@ import { sendPostRequest } from "../../services/requests";
 import { redirectToPath } from "../../services/app";
 
 const Posts = () => {
-  const [novaPublicacao, setNovaPublicacao] = useState({ autor: { id: 1 } });
+  const [novaPublicacao, setNovaPublicacao] = useState({ autor: { id: 54 } });
 
   const sendNewPost = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const Posts = () => {
     console.log(post);
 
     sendPostRequest("publicacoes", post);
-    // redirectToPath("/feed", e);
+    redirectToPath("/feed", e);
   };
 
   return (
