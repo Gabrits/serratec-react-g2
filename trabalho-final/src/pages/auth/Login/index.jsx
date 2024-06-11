@@ -52,7 +52,10 @@ function Login() {
             onChange={(e) => setUser({ ...user, username: e.target.value })}
           />
 
-          <label className="custom-form-label custom-password-label" htmlFor="password">
+          <label
+            className="custom-form-label custom-password-label"
+            htmlFor="password"
+          >
             Senha:
             <AppRevealButton
               onClick={(e) => handleRevealPassword(e)}
