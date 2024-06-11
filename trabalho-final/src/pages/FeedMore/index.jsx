@@ -86,7 +86,7 @@ const FeedMore = () => {
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
             >
-              <Form.Label>Descrição</Form.Label>
+              <Form.Label>Imagem</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
