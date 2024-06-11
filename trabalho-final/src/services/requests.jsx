@@ -1,10 +1,6 @@
 import { getCookie } from "./cookie";
 import axios from "axios";
 
-function sendDefaultJson(message, response) {
-  return { message: message, res: response };
-}
-
 export function sendGetRequest(
   endpoint,
   headers = { Authorization: getCookie("jwtToken") },
@@ -13,10 +9,12 @@ export function sendGetRequest(
   if (endpoint) {
     return axios
       .get(`${url}/${endpoint}`, { headers: headers })
-      .then((response) => sendDefaultJson("Sucesso na requisição!", response))
-      .catch((error) => sendDefaultJson("Falha na requisição", error));
+      .then((response) => response)
+      .catch((error) => {
+        throw new Error(`Erro na requisição: ${error.message}`);
+      });
   }
-  return sendDefaultJson("Você deve fornecer um endpoint.", {});
+  throw new Error("Você deve fornecer um id e um endpoint.", {});
 }
 
 export function sendGetByIdRequest(
@@ -28,23 +26,24 @@ export function sendGetByIdRequest(
   if ((id, endpoint)) {
     return axios
       .get(`${url}/${endpoint}/${id}`, { headers: headers })
-      .then((response) => sendDefaultJson("Sucesso na requisição!", response))
-      .catch((error) => sendDefaultJson("Falha na requisição", error));
+      .then((response) => response)
+      .catch((error) => {
+        throw new Error(`Erro na requisição: ${error.message}`);
+      });
   }
-  return sendDefaultJson("Você deve fornecer um id e um endpoint.", {});
+  throw new Error("Você deve fornecer um id e um endpoint.", {});
 }
 
 export function sendPostRequest(endpoint, body, url = "http://localhost:9090") {
   if (endpoint) {
     return axios
       .post(`${url}/${endpoint}`, body)
-      .then((response) => sendDefaultJson("Sucesso na requisição!", response))
-      .catch((error) => sendDefaultJson("Falha na requisição", error));
+      .then((response) => response)
+      .catch((error) => {
+        throw new Error(`Erro na requisição: ${error.message}`);
+      });
   }
-  return sendDefaultJson(
-    "Você deve fornecer um id, um endpoint e um body.",
-    {}
-  );
+  throw new Error("Você deve fornecer um id, um endpoint e um body.");
 }
 
 export function sendDeleteRequest(
@@ -56,8 +55,10 @@ export function sendDeleteRequest(
   if (id && endpoint) {
     return axios
       .delete(`${url}/${endpoint}/${id}`, { headers: headers })
-      .then((response) => sendDefaultJson("Sucesso na requisição.", response))
-      .catch((error) => sendDefaultJson("Falha na requisição.", error));
+      .then((response) => response)
+      .catch((error) => {
+        throw new Error(`Erro na requisição: ${error.message}`);
+      });
   }
-  return sendDefaultJson("Você deve fornecer um id e um endpoint.", {});
+  throw new Error("Você deve fornecer um id e um endpoint.");
 }

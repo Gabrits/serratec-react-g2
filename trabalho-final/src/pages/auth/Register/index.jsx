@@ -1,18 +1,41 @@
 import { useState } from "react";
 import AppButton from "../../../components/AppButton";
+import { sendPostRequest } from "../../../services/requests";
 import { toggleState, redirectToPath } from "../../../services/app";
 import "./style.css";
 import AppRevealButton from "../../../components/AppRevealButton";
+import Alert from "react-bootstrap/Alert";
 
 function Register() {
   const [userFormData, setUserFormData] = useState({});
+  const [userRegistrationFailed, setUserRegistrationFailed] = useState(false);
+  const [userRegistrationSucceded, setUserRegistrationSucceded] =
+    useState(false);
   const [revealPassword, setRevealPassword] = useState(false);
   const [revealPasswordConfirmation, setRevealPasswordConfirmation] =
     useState(false);
 
+  const showAlert = (succeded, time = 5000) => {
+    setUserRegistrationSucceded(succeded);
+    setUserRegistrationFailed(!succeded);
+
+    setTimeout(() => {
+      setUserRegistrationSucceded(false);
+      setUserRegistrationFailed(false);
+    }, time);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(userFormData);
+    sendPostRequest("usuarios", userFormData)
+      .then((response) => {
+        console.log(response);
+        showAlert(true);
+      })
+      .catch(() => {
+        showAlert(false);
+      });
   };
 
   const handleRevealPassword = (state, setState, e) => {
@@ -65,7 +88,10 @@ function Register() {
             }
           />
 
-          <label className="custom-form-label custom-password-label" htmlFor="password">
+          <label
+            className="custom-form-label custom-password-label"
+            htmlFor="password"
+          >
             Senha:
             <AppRevealButton
               onClick={(e) =>
@@ -84,7 +110,10 @@ function Register() {
             }
           />
 
-          <label className="custom-form-label custom-password-label" htmlFor="confirmPassword">
+          <label
+            className="custom-form-label custom-password-label"
+            htmlFor="confirmPassword"
+          >
             Confirmação:
             <AppRevealButton
               onClick={(e) =>
@@ -143,6 +172,16 @@ function Register() {
           </AppButton>
         </div>
       </form>
+
+      {userRegistrationFailed && (
+        <Alert variant="danger">
+          Ocorreu um erro no cadastro, verifique os campos que foram fornecidos.
+        </Alert>
+      )}
+
+      {userRegistrationSucceded && (
+        <Alert variant="success">Usuário cadastrado com sucesso!</Alert>
+      )}
     </div>
   );
 }
