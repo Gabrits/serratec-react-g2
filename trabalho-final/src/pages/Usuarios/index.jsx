@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getCookie } from "../../services/cookie";
 import axios from "axios";
-import './style.css';
+import "./style.css";
 
 function Usuarios() {
   const [users, setUsers] = useState([]);
@@ -28,20 +28,7 @@ function Usuarios() {
 
   return (
     <>
-      <div className="navbar">
-        <div className="logo">
-          <img src="src/assets/logo.png" width={175} height={175} />
-        </div>
-      </div>
-      <div className="linhaSeparacao">
-        <img
-          src="https://www.freepnglogos.com/uploads/line-png/long-lines-straight-line-transparent-7.png"
-          height={50}
-          width={700}
-        />
-      </div>
-
-      <div className='listar'>
+      <div className="listar">
         <h1>Lista de Usuários</h1>
         <ul>
           {users.map((user, index) => (

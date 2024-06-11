@@ -15,7 +15,7 @@ function NavBar() {
           </li>
           <li>
             <a href="">
-              <Link to={""}>Usuários</Link>
+              <Link to={"/usuarios"}>Usuários</Link>
             </a>
           </li>
           <li>
