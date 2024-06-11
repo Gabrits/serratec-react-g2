@@ -2,7 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { getCookie } from "../../services/cookie";
 import AppButton from "../../components/AppButton";
-import './style.css'
+import "./style.css";
+import NavBar from "../../components/Navbar";
 
 function Feed() {
   const [publicacoes, setPublicacoes] = useState([]);
@@ -29,6 +30,7 @@ function Feed() {
 
   return (
     <>
+      <NavBar />
       {publicacoes.length > 0 ? (
         <ul>
           {publicacoes.map((publicacao, index) => (
@@ -44,16 +46,6 @@ function Feed() {
         // "Não há dados para serem exibidos no Feed!"
         ""
       )}
-
-      <div className="navbar">
-          <div className="logo">
-            <img src='src/assets/logo.png' width={175} height={175}/>
-          </div>
-      </div>
-          <div className="linhaSeparacao">
-            <img src="https://www.freepnglogos.com/uploads/line-png/long-lines-straight-line-transparent-7.png" height={50} width={700}/>
-          </div>
-          
     </>
   );
 }
