@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 function NavBar() {
   const [logado, setLogado] = useState(true);
 
@@ -13,21 +14,11 @@ function NavBar() {
         <div className="logo">
           <img src="src/assets/logo.png" width={175} height={175} />
         </div>
-        <ul className="nav-links">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Sobre</a>
-          </li>
-          {logado && (
-            <li>
-              <button className="logout-button" onClick={handleLogout}>
-                Sair
-              </button>
-            </li>
-          )}
-        </ul>
+        <div className="nav-links">
+          <Link to={"/"}>Feed</Link>
+          <Link to={""}>Usuários</Link>
+          <Link to={""}>Sair</Link>
+        </div>
       </div>
       <div className="linhaSeparacao">
         <img
