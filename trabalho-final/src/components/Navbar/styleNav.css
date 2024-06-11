@@ -1,9 +1,9 @@
 .navbar {
-  background-color: #333;
-  padding: 1rem;
+  background-color: #a9c0f3;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 5rem;
 }
 
 .logo {
@@ -38,4 +38,12 @@
 
 .logout-button:hover {
   color: #ddd;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  background-color: #5f89e4;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  color: aliceblue;
 }

@@ -22,3 +22,31 @@
 .tit-pub {
   text-align: center;
 }
+
+.div-card {
+  display: flex;
+  gap: 1rem;
+}
+
+.div-card h3 {
+  display: flex;
+}
+
+.div-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+}
+
+.div-card > div {
+  position: absolute;
+  left: 0;
+  flex-shrink: 0;
+}
+
+.tit-pub {
+  margin: 0 auto;
+  text-align: center;
+}

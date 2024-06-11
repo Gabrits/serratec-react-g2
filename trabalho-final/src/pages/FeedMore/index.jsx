@@ -59,7 +59,6 @@ const FeedMore = () => {
     <>
       <Card style={{ width: "18rem" }} className="card-edition">
         <Card.Body className="teste">
-          {/* <form onSubmit={handleSubmit(attPost)}> */}
           <form
             onSubmit={function handleSubmit(e) {
               e.preventDefault();
@@ -67,10 +66,14 @@ const FeedMore = () => {
             }}
           >
             <Form.Group className="mb-3">
-              <Link to={"/feed"}>
-                <IoIosArrowBack />
-              </Link>
-              <h3 className="tit-pub">Publicação</h3>
+              <div className="div-card">
+                <div>
+                  <Link to={"/feed"}>
+                    <IoIosArrowBack />
+                  </Link>
+                </div>
+                <h3 className="tit-pub">Publicação</h3>
+              </div>
               <Form.Label>Autor</Form.Label>
               <Form.Control className="mb-3" value={dados.autor} disabled />
             </Form.Group>
