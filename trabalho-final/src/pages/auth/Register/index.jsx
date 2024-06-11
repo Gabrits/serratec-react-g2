@@ -28,7 +28,7 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(userFormData);
-    sendPostRequest("usuarios", userFormData)
+    sendPostRequest("usuarios", userFormData, null)
       .then((response) => {
         console.log(response);
         showAlert(true);

@@ -7,6 +7,7 @@ import Register from "../pages/auth/Register";
 import FeedMore from "../pages/FeedMore";
 import Usuarios from "../pages/Usuarios";
 import RouteComponent from "../components/RouteComponent";
+import Posts from "../pages/Post";
 
 function AppRouter() {
   return (
@@ -36,6 +37,14 @@ function AppRouter() {
         element={
           <RouteComponent>
             <Usuarios />
+          </RouteComponent>
+        }
+      />
+      <Route
+        path="/novoPost"
+        element={
+          <RouteComponent>
+            <Posts />
           </RouteComponent>
         }
       />

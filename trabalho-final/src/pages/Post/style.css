@@ -1,0 +1,4 @@
+.card-post .card-post-form {
+    display: flex;
+    flex-direction: column;
+}

@@ -34,10 +34,15 @@ export function sendGetByIdRequest(
   throw new Error("Você deve fornecer um id e um endpoint.", {});
 }
 
-export function sendPostRequest(endpoint, body, url = "http://localhost:9090") {
+export function sendPostRequest(
+  endpoint,
+  body,
+  headers = { Authorization: getCookie("jwtToken") },
+  url = "http://localhost:9090"
+) {
   if (endpoint) {
     return axios
-      .post(`${url}/${endpoint}`, body)
+      .post(`${url}/${endpoint}`, body, { headers: headers })
       .then((response) => response)
       .catch((error) => {
         throw new Error(`Erro na requisição: ${error.message}`);
