@@ -9,11 +9,11 @@ function AppRouter() {
   return (
     <Routes>
       <Route path="*" element={<NotFound />} />
-      <Route path="/" element={<Feed />} />
-      <Route path="/feed" element={<Feed />} />
+      <Route path="/" element={<Login />} />
       <Route path="/auth/login" element={<Login />} />
+      <Route path="/feed" element={<Feed />} />
       <Route path="/auth/cadastrar" element={<Register />} />
-      <Route path="/usuarios" element={<Usuarios/>} />
+      <Route path="/usuarios" element={<Usuarios />} />
     </Routes>
   );
 }
