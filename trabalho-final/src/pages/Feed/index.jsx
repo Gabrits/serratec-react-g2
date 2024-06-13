@@ -62,7 +62,7 @@ function Feed() {
             <li key={index}>
               <div className="container">
                 <div className="publicacao">
-                  <div className="nomefoto">
+                  <div className="info-usuario">
                     <div className="fotoPerfil">
                       <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP3lC0SfgqCcTGipFh64hddM6xgBYQj90wOA&s"
@@ -71,10 +71,10 @@ function Feed() {
                         height={50}
                       />
                     </div>
-                    <div className="nomePerfil">
-                      <p>{publicacao.autor}</p>
-                    </div>
+
+                    <p>{publicacao.autor}</p>
                   </div>
+
                   <div className="imagem">
                     {publicacao.conteudo.split(":")[0] == "http" ||
                     publicacao.conteudo.split(":")[0] == "https" ? (
@@ -83,6 +83,7 @@ function Feed() {
                       <p>{publicacao.conteudo}</p>
                     )}
                   </div>
+
                   <ul className="emojis">
                     <li
                       className={curtido ? "curtir ativo" : "curtir"}

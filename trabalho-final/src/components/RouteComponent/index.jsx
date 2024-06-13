@@ -1,5 +1,6 @@
 import AuthAgent from "../AuthAgent";
 import NavBar from "../Navbar";
+import Footer from "../Footer";
 
 function RouteComponent({ children }) {
   return (
@@ -7,6 +8,7 @@ function RouteComponent({ children }) {
       <AuthAgent>
         <NavBar />
         {children}
+        <Footer/>
       </AuthAgent>
     </>
   );
